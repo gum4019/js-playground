@@ -3,3 +3,22 @@
 <<개발 환경 구축>>
 * 소스트리: 
 스테이지에 올라가지 않은 파일 - 모두 스테이지에 올리기 - 커밋 - push
+
+<<자바스크립트로 무엇을 할 수 있나?>>
+* 
+html
+<p id="txt">지금은 몇 시인가요?</p>
+
+javascript
+var elem = document.getElementById('txt');	//좌는 Element 객체, 우는 찾으려는 요소 ID
+elem.innerHTML = Date();			//현재 날짜로 demo가 설정한 요소의 내용(HTML)을 바꿈
+
+elem.style.color = "red";
+elem.style.background = "black";
+
+var size = 10;
+function big() {
+    elem.style.fontSize = size + "px";
+    size = size + 1;            
+}
+var tid = setInterval(big, 100);
