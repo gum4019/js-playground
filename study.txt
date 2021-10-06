@@ -1,15 +1,19 @@
 [쉽고 자연스럽게 배워보는 Javasciprt]
 
+
 <<개발 환경 구축>>
 * 소스트리: 
 스테이지에 올라가지 않은 파일 - 모두 스테이지에 올리기 - 커밋 - push
 
+
+
 <<자바스크립트로 무엇을 할 수 있나?>>
 * 
-html
+@html
 <p id="txt">지금은 몇 시인가요?</p>
 
-javascript
+
+@javascript
 var elem = document.getElementById('txt');	//좌는 Element 객체, 우는 찾으려는 요소 ID
 elem.innerHTML = Date();			//현재 날짜로 demo가 설정한 요소의 내용(HTML)을 바꿈
 
@@ -22,3 +26,49 @@ function big() {
     size = size + 1;            
 }
 var tid = setInterval(big, 100);
+
+
+
+<<자료형>>
+* 강사님께서 아는 내용이면 스킵하라고 하셔서 스킵함
+
+
+
+<<변수>>
+* = 대입 연산자, === 같다
+
+* 변수 이름 잘 짓기
+- 소문자로 시작
+- 카멜 케이스(numPeople)이나 스네이크 케이스(num_people) 사용
+
+
+
+<<연산자 및 기타>>
+* 문자열의 길이 구하기: 변수명.length;	//공백 포함
+
+* 문자열 간단히 조작하기(메소드 사용)
+var a = "KheLLo"
+a[0];			//K
+a[1] ="H"; 		//안 됨
+a.slice(1,4);		//1~3까지 보임. heL
+a.toUpperCase();		//문자열 전부 대문자로 변경. 하지만 실제 변수가 변경 되지 않음.
+a.toLowerCase();		//문자열 전부 소문자로 변경. 하지만 실제 변수가 변경 되지 않음.
+
+* NaN: 값이 아니다. === 계산불가능.
+
+* alert() 과 prompt() 사용해 보기
+var ans = prompt("How are you?");	//팝업창 나옴. 입력창에 문자 쓰면 ans에 담김.
+
+* 만약 prompt()로 숫자를 받고 싶다면
+var num = prompt("숫자를 입력하여 주세요");
+num = Number(num);
+
+
+
+<<연습문제1>>
+1. 두 수를 입력받아 4칙연산의 결과를 표시해 봅시다.		//ex1-1.html
+2. BMI를 계산하는 프로그램을 작성해 봅시다.			//ex1-2.html
+3. 화씨를 입력받아서 섭씨로 바꾸는 프로그램을 작성해 봅시다.	//ex1-3.html
+4. 입력한 문자열의 길이를 알려주는 프로그램을 작성해 봅시다.	//ex1-4.html
+
+
