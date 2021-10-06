@@ -9,15 +9,10 @@
 <body>
     <script>
         var sum = 0;
-        var cnt = 0;
-        while(1){
+        var cnt = -1;   //while이니까 무조건 한 번은 실행하게 됨. 그러므로 -1으로 설정
+        while(num != 0){
             var num = prompt("숫자를 입력하여 주세요. 0 입력시 종료");
-
             num = Number(num);
-
-            if(num == 0){
-                break;
-            }
 
             sum += num;
             cnt++;
