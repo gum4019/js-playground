@@ -14,14 +14,14 @@
 
         var i = 2;
 
-        while(num % i != 0 && i < (num-1)){
+        while(num % i != 0 && i < (num-1)){     //num이 i로 나눠지지 않고 && i와 num이 같아지면 소수로 판단하기 때문에 i가 num보다 작은 숫자여야 함
             i++;
         }
 
-        if(num % i == 0 && num != 2){
-            console.log(i, "  ", num, "  소수 아님");
+        if(num % i == 0 && num != 2){           //num이 i로 나눠지면 소수 && 2는 소수이므로 예외처리
+            console.log("소수 아님");
         }else{
-            console.log(i, "  ", num, "  소수 맞음");
+            console.log("소수 맞음");
         }
 
     </script>
