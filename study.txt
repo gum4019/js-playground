@@ -121,6 +121,7 @@ github.com/내아이디/내프로젝트 링크를 통해 정상적으로 업로�
 
 gugudan_1.html	//구구단 2, 3단 출력
 gugudan_2.html	//구구단 N단 출력
+gugudad_3.html	//구구단 N단 출력 + 조건문 입력하여 입력문 2~9만 받기
 
 
 
