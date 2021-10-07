@@ -7,21 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>구구단 2단, 3단</h2>
+    <h2>구구단 N단 출력하기</h2>
     <script>
-        "<p>"
-        for(var i = 1; i < 10; i++){
-            console.log("2 * ", i, " = ", 2*i);
-            document.write("2 * ", i, " = ", 2*i, "<br>");
-        }
-        "</p>"
+        var num = prompt("숫자를 입력하세요");
 
-        "<p>"
-            for(var i=1; i<10; i++){
-            console.log("3 * ", i, " = ", 3*i);
-            document.write("3 * ", i, " = ", 3*i, "<br>");
+        num = Number(num);
+
+        for(var i = 1; i < 10; i++){
+            console.log(num + " * ", i, " = ", num*i);
+            document.write(num + " * ", i, " = ", num*i, "<br>");
         }
-        "</p>"
     </script>
 </body>
 </html>
