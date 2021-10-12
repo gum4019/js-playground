@@ -405,3 +405,108 @@ m2.show();
 
 
 
+<<참조 변수와 Call by reference>>
+* 참조 변수와 일반 변수
+객체를 변수에 할당하면 참조 변수가 되고, 기본 타입을 변수에 할당하면 일반 변수가 됩니다.
+
+* 요약
+- 값 전달 변수는 함수 내부에서 값을 바꿔도 외부에서는 그대로입니다.
+- 참조 전달 변수는 함수 내부에서 값을 바꾸면 외부의 객체도 값이 바뀝니다.
+
+
+
+<<객체와 프로토타입>>
+* 프로토타입:  메모리를 절약하고 효율적으로 객체의 메소드를 생성할 수 있습니다.
+
+
+
+<<DOM과 HTML>>
+* HTML과 JS 분리하기
+@ dom.html
+...
+<script src="./dom_test.js"></script>
+...
+
+@ dom_test.js
+var msg = "Hello";
+alert(msg);
+
+*DOM (Document Object Model)
+- 문서를 객체를 이용해서 계층 구조로 표현함
+- 표준: W3CDOM
+- 구현체: Gecko, Webkit 등
+
+* html 객체
+- HTML 문서도 객체로 간주된다.
+- window: 최상위 객체
+- document: dom의 최상위 객체이면서 window의 하위 객체
+
+var list = document.getElementsByTagName('h1');
+list[0].innerHTML;
+list[0].innerHTML = "Hello";
+
+* DOM 객체의 값 바꾸기
+var element = document.getElementById('id')
+element.innerHTML = '값'
+
+<h2>My First Page</h2>
+<p id="test"></p>
+
+<script>
+var p = document.getElementById("test");
+p.innerHTML = "Hello World!";
+</script>
+
+var list = document.getElementById('main');
+main.innerHTML = "Hello";
+
+
+
+<<DOM으로 버튼 추가해보기>>
+* 준비하기
+아래의 내용이 포함된 html 파일을 하나 작성합니다.
+<div id="test">메뉴판 예제</div>
+<script src="add_button.js"></script>
+
+* DOM을 이용해 html 객체 추가하기
+var el = document.getElementById('test');
+var menu = document.createElement('ul');  
+menu.id = 'menupan';
+
+var item1 = document.createElement('li');
+item1.id = 'menu1';
+item1.innerHTML = "설렁탕";
+
+var item2 = document.createElement('li');
+item2.id = 'menu2';
+item2.innerHTML = "추어탕";
+
+menu.appendChild(item1);  
+menu.appendChild(item2);  
+
+el.appendChild(menu);
+
+* input 과 button 샘플
+<input type='text' id='input1'><button id='btn1' onclick='read()'>click</button>
+<script> 
+    var read = function() {
+        var input = document.getElementById('input1');
+        console.log(input.value);
+    };
+</script>
+
+
+
+<<git의 브랜치 개념 이해하기>>
+* 이번 강의 요약
+- 브랜치 (branch): 기능 변경을 하고 싶을 때 생성 및 사용
+- 머지 (merge): 한 브랜치의 내용을 다른 브랜치에 반영
+- 체크아웃 (checkout): 저장소에서 특정 커밋이나 브랜치로 돌아가고 싶을 때 사용
+
+
+
+
+
+
+
+
