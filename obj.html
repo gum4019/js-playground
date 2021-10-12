@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>객체 예제</h2>
+    <script>
+      //사람 객체
+      var Human = function (name, hp, power) {
+        this.name = name;
+        this.hp = hp;
+        this.power = power;
+
+        this.attack = function (target) {
+          target.hp -= this.power;
+        };
+
+        this.show = function () {
+          console.log(this);
+        };
+
+        this.eat = function (target) {
+          this.hp += target.energy;
+          this.power += target.energy;
+        };
+      };
+
+      //음식 객체
+      var Food = function (name, energy) {
+        this.name = name;
+        this.energy = energy;
+      };
+
+      //사람 객체 생성
+      var Lim = new Human("임시연", 100, 200);
+
+      //음식 객체(도넛) 생성 후 먹임
+      var donut = new Food("도넛", 50);
+      Lim.eat(donut);
+
+      Lim.show();
+    </script>
+  </body>
+</html>

@@ -338,13 +338,70 @@ functin main()
 //3. 계산기 구현 준비
 <<배열과 문자열2>>
 * 배열의 메소드 더 살펴보기
-- concat()
-concat: 배열 합치기, 문자열도 가능
-- join()
-배열을 문자열로 바꿀 때 사용합니다.
-- indexOf(), lastIndexOf()
-배열이나 문자열안의 원소를 가지고 인덱스를 찾을 수 있음
 
+* concat() :배열 합치기, 문자열도 가능	//하지만 기존 배열에 저장되지는 않음. 새로운 배열을 만들어야 함.	//문자열에서는 +로도 가능하다
+
+* join(): 배열을 문자열로 바꿀 때 사용합니다.
+var a = [1, 2, 3];
+a.join();	//123
+a.join("--")	//1--2--3
+
+* indexOf(), lastIndexOf(): 배열이나 문자열안의 원소를 가지고 인덱스를 찾을 수 있음
+var a = [1, 2, 3, 4, 5, 2, 3];
+a.indexOf(1);	//0
+a.indexOf(2);	//1
+a.laastIndexOf(2)	//5
+
+a.indexOf(100);	//-1
+*활용: 	if(a.indexOf(100) === -1)	console.log("100없네");
+
+* slice()		//원본 안 변함
+사용법: slice(startIndex, endIndex) 기존 배열을 잘라서 새로운 배열을 만듭니다. 기존 배열은 변하지 않습니다. startIndex 위치부터 endIndex 직전의 위치까지 자릅니다. endIndex의 원소는 포함되지 않습니다.
+
+var a = [1, 2, 3, 4, 5];
+a.slice(2, 4);	//[3, 4]
+a;		//[1, 2, 3, 4, 5]
+
+* splice()		//원본 변함. 	//배열 O, 문자열 X
+- 사용법: splice(startIndex, numElement)
+- 배열을 startIndex부터 numElement 개수만큼 잘라냅니다.
+- 잘라낸 원소들은 원본 배열에서 사라집니다.
+- slice()와 splice()는 둘다 유용하므로 각각의 사용법을 잘 기억해 놓는 게 좋습니다.
+var a2 = a.splice(2, 3);	//'2번째'부터 '3개'
+
+* 문자열의 split()
+- 문자열을 문자의 배열로 나누고 싶을 때 사용하는 메소드입니다.
+var s = "hello, world a-b-co,ltd";
+s.split("");		//["h", "e", "l", ... ]
+s.join("");		//이전으로 돌아감
+s.split(",");		//["hello", "world a-b-co", ... ]
+
+
+
+<<조건문2: switch-case>>		//grade.html
+* 점수가 10점이면 A, 9점이면 B, 그 외에는 C를 출력하는 코드를 작성하세요.
+- if로 구현
+- switch-case로 구현
+
+
+
+<<객체2>>
+* 생성자를 이용하여 객체 만들기
+var m1 = new Human("Honux", 100, 10);	//m1은 객체 또는 인스턴스라고 합니다. m1은 그리고 참조 변수임
+var m2 = new Human("Crong", 999, 1);
+m1.attack(m2);
+m2.attack(m1);
+m1.show();
+m2.show();
+
+* 생성자를 사용하는 이유
+- 객체를 하나만 만들 때는 간단히 json 표기법으로 만듭니다.
+- 여러 객체를 만들고 싶을 때는 생성자를 통해서 만듭니다.
+
+* 예제		//obj.html
+- Food(name, energy) 생성자를 만들어 봅시다.
+- eat(food) 메소드를 Human() 생성자 안에 추가해 봅시다.
+- 도너츠 객체를 생성해서 휴먼 객체에게 먹여 봅시다.
 
 
 
