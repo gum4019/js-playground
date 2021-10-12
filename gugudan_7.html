@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>구구단 최종 미션</h2>
+    <script>
+      var gugudan = {
+        array: [],
+
+        input: function () {
+          var str = prompt("문자열을 입력하세요");
+          str = str.split(",");
+          for (var i = 0; i < str.length; i++) {
+            this.array[i] = Number(str[i]);
+          }
+        },
+
+        multiple: function () {
+          var str = [];
+
+          for (var i = 0; i < this.array.length; i++) {
+            for (var x = 1; x <= 9; x++) {
+              str[x - 1] = this.array[i] * x;
+            }
+            document.write(str + "<br>");
+          }
+        },
+      };
+
+      gugudan.input();
+      gugudan.multiple();
+    </script>
+  </body>
+</html>
