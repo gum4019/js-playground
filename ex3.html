@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>연습문제3: 소수 출력하기</h2>
+    <script>
+      var obj = {
+        cnt: 0,
+        prime: function (num) {
+          if (num === 1) return;
+
+          if (num === 2) {
+            document.write(++this.cnt + "번째 소수: " + num + "<br>");
+            return;
+          }
+
+          var i = 2;
+
+          for (i = 2; i < num; i++) {
+            if (num % i === 0) {
+              return;
+            }
+          }
+
+          document.write(++this.cnt + "번째 소수: " + num + "<br>");
+        },
+      };
+
+      for (var i = 1; i <= 1000; i++) {
+        obj.prime(i);
+      }
+    </script>
+  </body>
+</html>
