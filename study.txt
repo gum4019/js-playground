@@ -533,8 +533,22 @@ function main()
 
 
 
+<<한 줄로 입력받아 처리하기>>
+* 도전과제
+공백 없이 입력을 받아본다.
+일반 계산기처럼 버튼 UI를 이용해 구현한다.
+CSS를 예쁘게 입혀본다.
+
+    <input type="text" id="txt" /><button id="btn1" onclick="read()">
+      문자열 입력
+    </button>
 
 
+      var read = function () {
+        var input = document.getElementById("txt");
+        this.array = input;
+        console.log(this.array);
+      };
 
 
 
