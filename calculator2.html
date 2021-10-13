@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>함수를 활용한 사칙연산 구현</h2>
+    <script>
+      //메인 함수, 사용자의 값을 입력하는 함수, 출력하는 함수 등 함수로 코드를 나누어 구현
+      var calculator = {
+        result: 0,
+        array: [],
+
+        input: function () {
+          var str = prompt("문자열을 입력하세요");
+          str = str.split(" ");
+
+          // 숫자이면 문자에서 숫자로 변환
+          for (var i = 0; i < str.length; i++) {
+            if (isNaN(str[i]) === false) {
+              str[i] = Number(str[i]);
+            }
+          }
+
+          this.array = str;
+        },
+
+        output: function () {
+          var str = this.array;
+
+          var result = str[0];
+          for (var i = 1; i < str.length; i++) {
+            if (str[i] === "q") break;
+            switch (str[i]) {
+              case "+":
+                result = result + str[++i];
+                break;
+              case "-":
+                result = result - str[++i];
+                break;
+              case "*":
+                result = result * str[++i];
+                break;
+              case "/":
+                result = result / str[++i];
+                break;
+            }
+          }
+
+          this.result = result;
+
+          console.log("계산 결과값은 " + this.result);
+        },
+      };
+
+      function main() {
+        calculator.input();
+        calculator.output();
+      }
+
+      main();
+    </script>
+  </body>
+</html>
