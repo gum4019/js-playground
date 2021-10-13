@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>계산기 구현하기</h2>
+    <script>
+      //문자열 입력 받고 띄어쓰기에 따라 배열에 넣기
+      var str = prompt("문자열을 입력하세요");
+      str = str.split(" ");
+
+      // 숫자이면 문자에서 숫자로 변환
+      for (var i = 0; i < str.length; i++) {
+        if (isNaN(str[i]) === false) {
+          str[i] = Number(str[i]);
+        }
+      }
+
+      //숫자인지 기호인지 판별하여 계산
+      var result = str[0];
+      for (var i = 1; i < str.length; i++) {
+        if (str[i] === "q") break;
+        switch (str[i]) {
+          case "+":
+            result = result + str[++i];
+            break;
+          case "-":
+            result = result - str[++i];
+            break;
+          case "*":
+            result = result * str[++i];
+            break;
+          case "/":
+            result = result / str[++i];
+            break;
+        }
+      }
+
+      //정수 값만 취급한다 헀으니, 소수값 버리기
+      result = parseInt(result);
+
+      console.log("결과는 " + result);
+    </script>
+  </body>
+</html>
