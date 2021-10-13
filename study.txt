@@ -505,7 +505,7 @@ el.appendChild(menu);
 
 
 
-//[실습] 계산기 구현하기
+//[실습] 계산기 구현하기		//calculator.html
 <<문자열 계산기>>
 * 요구사항
 사용자가 입력한 값에 따라 사칙연산을 계산할 수 있는 계산기를 구현한다.
@@ -516,7 +516,7 @@ q를 입력하면 결과값 출력하고 종료
 
 
 
-<<함수를 활용해 사칙연산 구현>>
+<<함수를 활용해 사칙연산 구현>>	//calculator2.html
 * 요구사항
 메인 함수, 사용자의 값을 입력하는 함수, 출력하는 함수 등 함수로 코드를 나누어 구현한다.
 사용자의 값을 입력하는 구현은 첫 번째 숫자 값, 사칙연산 기호 및 quit, 두 번째 숫자 값 입력으로 나뉜다.
@@ -533,22 +533,11 @@ function main()
 
 
 
-<<한 줄로 입력받아 처리하기>>
+<<한 줄로 입력받아 처리하기>>	
 * 도전과제
-공백 없이 입력을 받아본다.
-일반 계산기처럼 버튼 UI를 이용해 구현한다.
+공백 없이 입력을 받아본다.	////calculator3.html
+일반 계산기처럼 버튼 UI를 이용해 구현한다.	////calculator4.html
 CSS를 예쁘게 입혀본다.
-
-    <input type="text" id="txt" /><button id="btn1" onclick="read()">
-      문자열 입력
-    </button>
-
-
-      var read = function () {
-        var input = document.getElementById("txt");
-        this.array = input;
-        console.log(this.array);
-      };
 
 
 

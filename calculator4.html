@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>도전과제 계산기</h2>
+
+    <input type="text" id="txt" /><button
+      id="btn1"
+      onclick="calculator.input()"
+    >
+      문자열 입력
+    </button>
+
+    <script>
+      var calculator = {
+        result: 0,
+        array: [],
+
+        input: function () {
+          //문자열 입력 받음
+          var temp = document.getElementById("txt").value;
+          temp = temp.split("");
+
+          // 숫자이면 문자에서 숫자로 변환
+          for (var i = 0; i < temp.length; i++) {
+            if (isNaN(temp[i]) === false) {
+              temp[i] = Number(temp[i]);
+            }
+          }
+
+          //문자 하나씩 자르니, 기호인지 잘려진 숫자인지 판별하여 다시 재정비(ex 입력값 10이면 [1, 0]으로 처리함)
+          var str = [];
+          for (var i = 0, x = 0; i < temp.length; i++) {
+            //숫자이면
+            if (isNaN(temp[i]) === false) {
+              //앞에 있는 것이 숫자 O
+              if (isNaN(str[x - 1]) === false) {
+                str[x - 1] = str[x - 1] * 10 + temp[i];
+              } else {
+                //앞에 있는 것이 숫자 X
+                str[x++] = temp[i];
+              }
+            } else {
+              //숫자X (공백이나 기호)
+              str[x++] = temp[i];
+            }
+          }
+
+          var result = str[0];
+          for (var i = 1; i < str.length; i++) {
+            if (str[i] === "q") break;
+            switch (str[i]) {
+              case "+":
+                result = result + str[++i];
+                break;
+              case "-":
+                result = result - str[++i];
+                break;
+              case "*":
+                result = result * str[++i];
+                break;
+              case "/":
+                result = result / str[++i];
+                break;
+            }
+          }
+
+          this.array = str;
+          this.result = result;
+
+          console.log("계산 결과값은 " + this.result);
+        },
+      };
+    </script>
+  </body>
+</html>
